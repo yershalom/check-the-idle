@@ -15,7 +15,7 @@ android:
     - sys-img-armeabi-v7a-android-26
 
 before_script:
-  - sdkmanager "system-images;android-26;google_apis;x86"
+  - echo y | sdkmanager "system-images;android-26;google_apis;x86"
   # Create and start emulator
   - echo no | android create avd --force -n test -k "system-images;android-26;google_apis;x86"
   - emulator -avd test -no-skin -no-audio -no-window &
