@@ -30,7 +30,6 @@ before_install:
 
 script:
   - ./gradlew clean installDebug
-  - ./gradlew check
   - ./gradlew testDebugUnitTest
   - ./gradlew connectedDebugAndroidTest
 
