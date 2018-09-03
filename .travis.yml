@@ -1,24 +1,29 @@
-language: android
+language: java
+os: linux
 jdk: oraclejdk8
 sudo: false
 
-android:
-  components:
-    - platform-tools
-    - build-tools-27.0.2
-    - build-tools-26.0.2
-    - tools
-    - android-27
-    - android-26
-    - extra-android-m2repository
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - sys-img-armeabi-v7a-android-26
+# android:
+#   components:
+#     - platform-tools
+#     - build-tools-27.0.2
+#     - build-tools-26.0.2
+#     - tools
+#     - android-27
+#     - android-26
+#     - extra-android-m2repository
+#     - extra-google-google_play_services
+#     - extra-google-m2repository
+#     - sys-img-armeabi-v7a-android-26
+    
+before_install:
+  - source ./scripts/env.android.sh
 
 before_script:
   # Create and start emulator
+  - "$ANDROID_HOME"/tools/bin/sdkmanager "platform-tools" "system-images;android-26;default;armeabi-v7a" "android-26" "tools" "build-tools-27.0.2"
   - echo no | "$ANDROID_HOME"/tools/bin/avdmanager create avd --force -n test -t android-26 --abi armeabi-v7a --device "Nexus 5X" -k "system-images;android-26;default;armeabi-v7a"
-  - emulator -avd test -no-skin -no-audio -no-window &
+  - "$ANDROID_HOME"/tools/bin/emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
