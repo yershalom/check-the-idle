@@ -12,7 +12,7 @@ interface RedditApiService {
     fun getTopics(): Call<Model.Data>
 
     @GET("/r/{topic}/hot.json")
-    fun getPosts(@Path("topic") topic: String): Call<Model.Posts>
+    fun getPosts(@Path("topic") topic: String): Call<Model.PostsData>
 
     companion object {
         fun create(): RedditApiService {

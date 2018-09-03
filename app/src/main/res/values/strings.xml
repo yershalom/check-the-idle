@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Check the Idle</string>
+    <string name="tv_default">Something</string>
+    <string name="tv_score">18</string>
 </resources>

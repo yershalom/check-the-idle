@@ -24,8 +24,20 @@ object Model {
             @SerializedName("icon_img") val icon_img: String
     )
 
+    data class PostsData(
+            @SerializedName("data") val data: PostsChildren
+    )
+
+    data class PostsChildren(
+            @SerializedName("children") val children: List<PostsChildrenData>
+    )
+
+    data class PostsChildrenData(
+            @SerializedName("data") val data: Posts
+    )
+
     data class Posts(
-            @SerializedName("url") val url: String,
+            @SerializedName("permalink") val url: String,
             @SerializedName("title") val title: String,
             @SerializedName("score") val score: Int
     )
