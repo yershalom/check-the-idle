@@ -13,8 +13,8 @@ import com.yershalom.checktheidle.WebViewActivity
 
 
 class PostAdapter internal constructor(private var posts: List<Model.PostsChildrenData>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
-    val WEBSITE_ADDRESS = "website_address"
-    val REDDIT_BASE_URL = "https://reddit.com"
+    private val WEBSITE_ADDRESS = "website_address"
+    private val REDDIT_BASE_URL = "https://reddit.com"
 
     class PostViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
