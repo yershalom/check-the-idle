@@ -1,5 +1,8 @@
 package com.yershalom.checktheidle.data
 
+import com.yershalom.checktheidle.BuildConfig
+import com.yershalom.checktheidle.espresso.HttpIdlingResource
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.Retrofit
@@ -16,11 +19,16 @@ interface RedditApiService {
 
     companion object {
         fun create(): RedditApiService {
+            val client = OkHttpClient()
+            if (BuildConfig.DEBUG) {
+                HttpIdlingResource.register(client)
+            }
             val BASE_REDDIT_URL = "https://www.reddit.com/"
 
-            val retrofit = Retrofit.Builder()
+            val retrofit: Retrofit = Retrofit.Builder()
                     .baseUrl(BASE_REDDIT_URL)
                     .addConverterFactory(GsonConverterFactory.create())
+                    .client(client)
                     .build()
 
             return retrofit.create(RedditApiService::class.java)
