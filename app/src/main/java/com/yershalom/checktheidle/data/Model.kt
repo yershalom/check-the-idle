@@ -1,4 +1,4 @@
-package com.yershalom.checktheidle
+package com.yershalom.checktheidle.data
 
 import com.google.gson.annotations.SerializedName
 import kotlin.collections.List

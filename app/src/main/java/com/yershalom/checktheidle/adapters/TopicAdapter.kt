@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
-import com.yershalom.checktheidle.Model
+import com.yershalom.checktheidle.data.Model
 import com.yershalom.checktheidle.PostActivity
 import com.yershalom.checktheidle.R
 

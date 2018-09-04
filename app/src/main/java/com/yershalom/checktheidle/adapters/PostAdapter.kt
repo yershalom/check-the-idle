@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.yershalom.checktheidle.Model
+import com.yershalom.checktheidle.data.Model
 import com.yershalom.checktheidle.R
 import android.content.Intent
 import com.yershalom.checktheidle.WebViewActivity

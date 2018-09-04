@@ -5,6 +5,8 @@ import android.os.StrictMode
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.yershalom.checktheidle.adapters.PostAdapter
+import com.yershalom.checktheidle.data.Model
+import com.yershalom.checktheidle.data.RedditApiService
 import kotlinx.android.synthetic.main.posts_recyclerview_activity.*
 
 class PostActivity: AppCompatActivity() {

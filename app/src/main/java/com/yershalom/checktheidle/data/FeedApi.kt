@@ -1,4 +1,4 @@
-package com.yershalom.checktheidle
+package com.yershalom.checktheidle.data
 
 import retrofit2.Call
 import retrofit2.http.GET
@@ -16,9 +16,10 @@ interface RedditApiService {
 
     companion object {
         fun create(): RedditApiService {
+            val BASE_REDDIT_URL = "https://www.reddit.com/"
 
             val retrofit = Retrofit.Builder()
-                    .baseUrl("https://www.reddit.com/")
+                    .baseUrl(BASE_REDDIT_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
