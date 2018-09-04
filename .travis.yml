@@ -29,7 +29,6 @@ before_install:
   - echo y |adb devices
 
 script:
-  - ./gradlew testUnitTest
   - ./gradlew connectedAndroidTest
 
 before_cache:
