@@ -29,9 +29,8 @@ before_install:
   - echo y |adb devices
 
 script:
-  - ./gradlew clean installDebug
-  - ./gradlew testDebugUnitTest
-  - ./gradlew connectedDebugAndroidTest
+  - ./gradlew testUnitTest
+  - ./gradlew connectedAndroidTest
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock

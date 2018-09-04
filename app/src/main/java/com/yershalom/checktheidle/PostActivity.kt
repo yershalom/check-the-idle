@@ -42,7 +42,6 @@ class PostActivity: AppCompatActivity() {
     private fun getPosts(topic: String): List<Model.PostsChildrenData>? {
         val client: RedditApiService = RedditApiService.create()
         val some = client.getPosts(topic).execute()
-        val body = some.body()!!.data.children
-        return body
+        return some.body()!!.data.children
     }
 }
