@@ -38,8 +38,6 @@ class HttpIdlingResource(private val name: String, private val dispatcher: Dispa
         @CheckResult
         // Extra guards as a library.
         fun create(name: String, client: OkHttpClient): HttpIdlingResource {
-            if (name == null) throw NullPointerException("name == null")
-            if (client == null) throw NullPointerException("client == null")
             return HttpIdlingResource(name, client.dispatcher())
         }
 
