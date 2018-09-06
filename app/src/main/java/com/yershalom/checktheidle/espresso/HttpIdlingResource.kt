@@ -40,9 +40,5 @@ class HttpIdlingResource(private val name: String, private val dispatcher: Dispa
         fun create(name: String, client: OkHttpClient): HttpIdlingResource {
             return HttpIdlingResource(name, client.dispatcher())
         }
-
-        fun register(client: OkHttpClient) {
-            IdlingRegistry.getInstance().register(create("okHttp", client))
-        }
     }
 }
