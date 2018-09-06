@@ -32,10 +32,10 @@ class PostAdapter internal constructor(private var posts: List<Model.PostsChildr
     override fun onBindViewHolder(postViewHolder: PostViewHolder, i: Int) {
         postViewHolder.postTitle.text = posts[i].data.title
         postViewHolder.postScore.text = posts[i].data.score.toString()
-        postViewHolder.cardView.setOnClickListener {
-            val browserIntent = Intent(postViewHolder.cardView.context, WebViewActivity::class.java)
+        postViewHolder.cardView.setOnClickListener { view ->
+            val browserIntent = Intent(view.context, WebViewActivity::class.java)
             browserIntent.putExtra(WEBSITE_ADDRESS, REDDIT_BASE_URL + posts[i].data.url)
-            postViewHolder.cardView.context.startActivity(browserIntent)
+            view.context.startActivity(browserIntent)
         }
     }
 

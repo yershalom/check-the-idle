@@ -41,9 +41,9 @@ class TopicAdapter internal constructor(private var topics: List<Model.ChildrenD
             val randomIcon = "https://b.thumbs.redditmedia.com/S6FTc5IJqEbgR3rTXD5boslU49bEYpLWOlh8-CMyjTY.png"
             Picasso.get().load(randomIcon).into(topicViewHolder.topicIcon)
         }
-        topicViewHolder.cardView.setOnClickListener {
-            val intent = startTopic(topicViewHolder.cardView.context ,topics[i].data.display_name)
-            topicViewHolder.cardView.context.startActivity(intent)
+        topicViewHolder.cardView.setOnClickListener { view ->
+            val intent = startTopic(view.context ,topics[i].data.display_name)
+            view.context.startActivity(intent)
         }
     }
 
