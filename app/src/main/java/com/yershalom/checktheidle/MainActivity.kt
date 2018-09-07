@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.recyclerview_activity)
 
         val llm = LinearLayoutManager(this)
-        rv.layoutManager = llm
-        rv.setHasFixedSize(true)
+        rv_topic.layoutManager = llm
+        rv_topic.setHasFixedSize(true)
 
         initializeData()
         initializeAdapter()
@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeAdapter(){
         val adapter = TopicAdapter(this.topics!!)
-        rv.adapter = adapter
+        rv_topic.adapter = adapter
     }
 }
